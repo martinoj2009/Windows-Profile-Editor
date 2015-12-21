@@ -240,5 +240,19 @@ namespace Windows_Profile_Editor
             }
             return isAdmin;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegistryKey ChangeValue = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\\Microsoft\Windows NT\\CurrentVersion\\ProfileList\\" + userList.SelectedItem, true);
+                ChangeValue.SetValue("ProfileImagePath", profilePathBox.Text, RegistryValueKind.ExpandString);
+                ChangeValue.SetValue("Guid", guidBox.Text, RegistryValueKind.String);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
