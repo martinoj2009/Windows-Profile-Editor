@@ -1,0 +1,20 @@
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.config
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.pdb
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csprojResolveAssemblyReference.cache
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Form1.resources
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Properties.Resources.resources
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csproj.GenerateResource.Cache
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.exe
+c:\users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.pdb
+C:\Users\majones\documents\visual studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.textInput.resources
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.config
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.exe
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.pdb
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.pdb
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csprojResolveAssemblyReference.cache
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Form1.resources
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Properties.Resources.resources
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.textInput.resources
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csproj.GenerateResource.Cache
