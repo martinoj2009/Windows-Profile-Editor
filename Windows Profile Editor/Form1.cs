@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using System.DirectoryServices;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security.Principal;
 
 namespace Windows_Profile_Editor
 {
@@ -17,13 +18,14 @@ namespace Windows_Profile_Editor
     {
         public Form1()
         {
+            
             InitializeComponent();
             userList.Click += new EventHandler(userList_Click);
             detailList.DoubleClick += new EventHandler(editDetailButton_Click);
-
+            usernameLabel.Text = null;
 
             //Warn the user if they're not running as admin
-            if(IsUserAdmin() == false)
+            if (IsUserAdmin() == false)
             {
                 string adminError = (MessageBox.Show("You're not running as admin, you will have very limited functionality.", "No Admin Rights!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)).ToString();
                 if(adminError == "Cancel")
@@ -38,6 +40,7 @@ namespace Windows_Profile_Editor
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.userList.FormattingEnabled = true;
             this.userList.HorizontalScrollbar = true;
             //Get the SID's
@@ -48,24 +51,33 @@ namespace Windows_Profile_Editor
             }
 
 
+
         }
 
         private void userList_Click(object sender, EventArgs e)
         {
+            if(userList.SelectedItem == null)
+            {
+                return;
+            }
+            try
+            {
+                string account = new System.Security.Principal.SecurityIdentifier(userList.SelectedItem.ToString()).Translate(typeof(System.Security.Principal.NTAccount)).ToString();
+                usernameLabel.Text = account;
+            }
+            catch(Exception)
+            {
+                usernameLabel.Text = "Error getting username!";
+            }
+            
+
             //Clear out the list and the text boxes
             detailList.Items.Clear();
             guidBox.Text = null;
             profilePathBox.Text = null;
-            string a = null;
 
-            try
-            {
-                a = userList.SelectedItem.ToString();
-            }
-            catch(Exception)
-            {
-                return;
-            }
+            string a = userList.SelectedItem.ToString();
+
             
 
             //make sure a isn't null, can cause crash, this happens if user clicks in blank space of list
@@ -254,5 +266,8 @@ namespace Windows_Profile_Editor
                 MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
+        
     }
 }

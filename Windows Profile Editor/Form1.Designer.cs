@@ -42,6 +42,7 @@
             this.guidBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +162,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.profilePathBox);
@@ -171,6 +173,15 @@
             this.groupBox1.Size = new System.Drawing.Size(342, 185);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(78, 16);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(68, 13);
+            this.usernameLabel.TabIndex = 15;
+            this.usernameLabel.Text = "USERNAME";
             // 
             // Form1
             // 
@@ -215,6 +226,7 @@
         private System.Windows.Forms.TextBox guidBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label usernameLabel;
     }
 }
 

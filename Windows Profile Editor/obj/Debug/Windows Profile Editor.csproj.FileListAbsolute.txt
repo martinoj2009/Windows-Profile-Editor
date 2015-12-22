@@ -18,3 +18,5 @@ H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Properties.Resources.resources
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.textInput.resources
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csproj.GenerateResource.Cache
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.CodeAnalysisLog.xml
+H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.lastcodeanalysissucceeded
