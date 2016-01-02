@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Windows Profile Editor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This is a program that will allow you to edit Windows user profile information. This will make it much easier to edit the registry keys. All this program is doing is reading and writing to the registry.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Windows Profile Editor")]

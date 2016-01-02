@@ -30,13 +30,7 @@ namespace Windows_Profile_Editor
             //Warn the user if they're not running as admin
             if (IsUserAdmin() == false)
             {
-                /*
-                string adminError = (MessageBox.Show("You're not running as admin, you will have very limited functionality.", "No Admin Rights!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)).ToString();
-                if(adminError == "Cancel")
-                {
-                    System.Environment.Exit(1);
-                }
-                */
+                //This will warn the user if they are not running as admin
                 warningIfNotAdmin.Text = "Warning: You're not running this program as Admin!";
                 warningIfNotAdmin.ForeColor = Color.Red;
                 adminButton.Visible = true;
@@ -136,6 +130,12 @@ namespace Windows_Profile_Editor
 
         }
 
+        static byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
 
         private void editDetailButton_Click(object sender, EventArgs e)
         {
@@ -169,7 +169,7 @@ namespace Windows_Profile_Editor
                     }
                     else if (sharedvar.vlueType == "Binary")
                     {
-                        ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details, RegistryValueKind.Binary);
+                        ChangeValue.SetValue(detailList.SelectedItem.ToString(), System.Text.Encoding.ASCII.GetBytes(sharedvar.details), RegistryValueKind.Binary);
                     }
 
                     else if (sharedvar.vlueType == "ExpandString")
@@ -285,6 +285,12 @@ namespace Windows_Profile_Editor
             System.Diagnostics.Process.Start(startInfo);
             this.Close();
             return;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About aboutBox = new About();
+            aboutBox.ShowDialog();
         }
     }
 }
