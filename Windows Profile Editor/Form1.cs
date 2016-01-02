@@ -246,11 +246,11 @@ namespace Windows_Profile_Editor
                 System.Security.Principal.WindowsPrincipal principal = new System.Security.Principal.WindowsPrincipal(user);
                 isAdmin = principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
             }
-            catch (UnauthorizedAccessException ex)
+            catch (UnauthorizedAccessException)
             {
                 isAdmin = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 isAdmin = false;
             }
