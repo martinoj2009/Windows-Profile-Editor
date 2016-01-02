@@ -52,6 +52,7 @@ namespace Windows_Profile_Editor
             {
                 userList.Items.Add(ProfileKey);
             }
+            ProfileList.Close();
 
 
 
@@ -78,6 +79,7 @@ namespace Windows_Profile_Editor
             detailList.Items.Clear();
             guidBox.Text = null;
             profilePathBox.Text = null;
+            GC.Collect();
 
             string a = userList.SelectedItem.ToString();
 
@@ -124,7 +126,7 @@ namespace Windows_Profile_Editor
             {
                 detailList.Items.Add(ProfileKey);
             }
-
+            DetailList.Close();
 
 
 
@@ -200,6 +202,7 @@ namespace Windows_Profile_Editor
                     {
                         MessageBox.Show("Value not found!");
                     }
+                    ChangeValue.Close();
                            //ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details);
                 }
                 catch (Exception ex)
