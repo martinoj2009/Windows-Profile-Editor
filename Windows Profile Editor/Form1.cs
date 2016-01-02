@@ -23,15 +23,24 @@ namespace Windows_Profile_Editor
             userList.Click += new EventHandler(userList_Click);
             detailList.DoubleClick += new EventHandler(editDetailButton_Click);
             usernameLabel.Text = null;
+            warningIfNotAdmin.Text = "";
+            adminButton.Visible = false;
+            adminButton.Enabled = false;
 
             //Warn the user if they're not running as admin
             if (IsUserAdmin() == false)
             {
+                /*
                 string adminError = (MessageBox.Show("You're not running as admin, you will have very limited functionality.", "No Admin Rights!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)).ToString();
                 if(adminError == "Cancel")
                 {
                     System.Environment.Exit(1);
                 }
+                */
+                warningIfNotAdmin.Text = "Warning: You're not running this program as Admin!";
+                warningIfNotAdmin.ForeColor = Color.Red;
+                adminButton.Visible = true;
+                adminButton.Enabled = true;
             }
             
         }
@@ -267,7 +276,15 @@ namespace Windows_Profile_Editor
             }
         }
 
-        
-        
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+            //This will restart the program as admin
+            var exeName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+            ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
+            startInfo.Verb = "runas";
+            System.Diagnostics.Process.Start(startInfo);
+            this.Close();
+            return;
+        }
     }
 }

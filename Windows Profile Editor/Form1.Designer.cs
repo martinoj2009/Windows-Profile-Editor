@@ -43,6 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.warningIfNotAdmin = new System.Windows.Forms.Label();
+            this.adminButton = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +112,7 @@
             // 
             // deleteSIDButton
             // 
-            this.deleteSIDButton.Location = new System.Drawing.Point(199, 16);
+            this.deleteSIDButton.Location = new System.Drawing.Point(44, 16);
             this.deleteSIDButton.Name = "deleteSIDButton";
             this.deleteSIDButton.Size = new System.Drawing.Size(75, 23);
             this.deleteSIDButton.TabIndex = 9;
@@ -183,11 +185,32 @@
             this.usernameLabel.TabIndex = 15;
             this.usernameLabel.Text = "USERNAME";
             // 
+            // warningIfNotAdmin
+            // 
+            this.warningIfNotAdmin.AutoSize = true;
+            this.warningIfNotAdmin.Location = new System.Drawing.Point(221, 16);
+            this.warningIfNotAdmin.Name = "warningIfNotAdmin";
+            this.warningIfNotAdmin.Size = new System.Drawing.Size(38, 13);
+            this.warningIfNotAdmin.TabIndex = 16;
+            this.warningIfNotAdmin.Text = "NONE";
+            // 
+            // adminButton
+            // 
+            this.adminButton.Location = new System.Drawing.Point(523, 16);
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Size = new System.Drawing.Size(102, 23);
+            this.adminButton.TabIndex = 17;
+            this.adminButton.Text = "Restart As Admin";
+            this.adminButton.UseVisualStyleBackColor = true;
+            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 555);
+            this.Controls.Add(this.adminButton);
+            this.Controls.Add(this.warningIfNotAdmin);
             this.Controls.Add(this.deleteSIDButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.detailList);
@@ -227,6 +250,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label warningIfNotAdmin;
+        private System.Windows.Forms.Button adminButton;
     }
 }
 

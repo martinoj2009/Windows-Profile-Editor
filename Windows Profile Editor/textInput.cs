@@ -26,8 +26,13 @@ namespace Windows_Profile_Editor
             sharedvar.vlueType = ChangeValue.GetValueKind(sharedvar.details).ToString();
             try
             {
-                string GUID = (string)(Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + sharedvar.sid, sharedvar.details, null)).ToString();
-                detailsBox.Text = GUID;
+                string data = (string)(Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + sharedvar.sid, sharedvar.details, null)).ToString();
+                if(data == "System.Byte[]")
+                {
+                    MessageBox.Show("Currently I don't support editing Byte data. I know this needs to be added, but I need to change a few things with the application to do this. I will add this soon.", "Error: Don't support editing Byte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                detailsBox.Text = data;
             }
             catch(Exception)
             {
