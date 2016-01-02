@@ -48,6 +48,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupRegKey = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -192,7 +193,7 @@
             // warningIfNotAdmin
             // 
             this.warningIfNotAdmin.AutoSize = true;
-            this.warningIfNotAdmin.Location = new System.Drawing.Point(221, 31);
+            this.warningIfNotAdmin.Location = new System.Drawing.Point(280, 31);
             this.warningIfNotAdmin.Name = "warningIfNotAdmin";
             this.warningIfNotAdmin.Size = new System.Drawing.Size(38, 13);
             this.warningIfNotAdmin.TabIndex = 16;
@@ -233,11 +234,22 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // backupRegKey
+            // 
+            this.backupRegKey.Location = new System.Drawing.Point(169, 31);
+            this.backupRegKey.Name = "backupRegKey";
+            this.backupRegKey.Size = new System.Drawing.Size(75, 23);
+            this.backupRegKey.TabIndex = 19;
+            this.backupRegKey.Text = "Backup";
+            this.backupRegKey.UseVisualStyleBackColor = true;
+            this.backupRegKey.Click += new System.EventHandler(this.backupRegKey_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 555);
+            this.Controls.Add(this.backupRegKey);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.warningIfNotAdmin);
             this.Controls.Add(this.deleteSIDButton);
@@ -288,6 +300,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button backupRegKey;
     }
 }
 

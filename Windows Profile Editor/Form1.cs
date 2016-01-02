@@ -64,6 +64,8 @@ namespace Windows_Profile_Editor
             {
                 return;
             }
+
+            //Convert SID to username
             try
             {
                 string account = new System.Security.Principal.SecurityIdentifier(userList.SelectedItem.ToString()).Translate(typeof(System.Security.Principal.NTAccount)).ToString();
@@ -294,6 +296,46 @@ namespace Windows_Profile_Editor
         {
             About aboutBox = new About();
             aboutBox.ShowDialog();
+        }
+
+        private void backupRegKey_Click(object sender, EventArgs e)
+        {
+            if(userList.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select a SID to backup.", "No SID selected!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string a = userList.SelectedItem.ToString();
+            // Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a, "ProfileImagePath", null);
+            int backupReturnCode = Exportkey(a + ".reg",(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a));
+            if(backupReturnCode != 0)
+            {
+                MessageBox.Show("There was an error backing up the registry key!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //This is the function for exporting the registry key. This requires regedit for now
+        private static int Exportkey(string exportPath, string registryPath)
+        {
+            string path = "\"" + exportPath + "\"";
+            string key = "\"" + registryPath + "\"";
+            Process proc = new Process();
+
+            try
+            {
+                proc.StartInfo.FileName = "regedit.exe";
+                proc.StartInfo.UseShellExecute = false;
+
+                proc = Process.Start("regedit.exe", "/e " + path + " " + key);
+                proc.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                proc.Dispose();
+                return -1;
+            }
+            return 0;
         }
     }
 }
