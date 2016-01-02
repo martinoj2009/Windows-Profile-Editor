@@ -158,6 +158,9 @@ namespace Windows_Profile_Editor
 
             sharedvar.closed = -1;
             input.ShowDialog();
+            input = null;
+            GC.Collect();
+
 
             if(sharedvar.closed == 0)
             {

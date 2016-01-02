@@ -193,7 +193,7 @@
             // warningIfNotAdmin
             // 
             this.warningIfNotAdmin.AutoSize = true;
-            this.warningIfNotAdmin.Location = new System.Drawing.Point(280, 31);
+            this.warningIfNotAdmin.Location = new System.Drawing.Point(262, 31);
             this.warningIfNotAdmin.Name = "warningIfNotAdmin";
             this.warningIfNotAdmin.Size = new System.Drawing.Size(38, 13);
             this.warningIfNotAdmin.TabIndex = 16;
