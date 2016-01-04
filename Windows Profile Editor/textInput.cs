@@ -33,10 +33,6 @@ namespace Windows_Profile_Editor
             {
 
             }
-            
-            //detailsBox.Text = sharedvar.details;
-
-            
 
         }
 

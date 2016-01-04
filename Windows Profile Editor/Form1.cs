@@ -191,7 +191,7 @@ namespace Windows_Profile_Editor
                     {
                         MessageBox.Show("Value not found!");
                     }
-                           //ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details);
+                           
                 }
                 catch (Exception ex)
                 {
