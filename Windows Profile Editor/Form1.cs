@@ -23,15 +23,18 @@ namespace Windows_Profile_Editor
             //userList.Click += new EventHandler(userList_Click);
             detailList.DoubleClick += new EventHandler(editDetailButton_Click);
             usernameLabel.Text = null;
+            warningIfNotAdmin.Text = "";
+            adminButton.Visible = false;
+            adminButton.Enabled = false;
 
             //Warn the user if they're not running as admin
             if (IsUserAdmin() == false)
             {
-                string adminError = (MessageBox.Show("You're not running as admin, you will have very limited functionality.", "No Admin Rights!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)).ToString();
-                if(adminError == "Cancel")
-                {
-                    System.Environment.Exit(1);
-                }
+                //This will warn the user if they are not running as admin
+                warningIfNotAdmin.Text = "Warning: You're not running this program as Admin!";
+                warningIfNotAdmin.ForeColor = Color.Red;
+                adminButton.Visible = true;
+                adminButton.Enabled = true;
             }
             
         }
@@ -49,6 +52,7 @@ namespace Windows_Profile_Editor
             {
                 userList.Items.Add(ProfileKey);
             }
+            ProfileList.Close();
 
 
 
@@ -61,6 +65,8 @@ namespace Windows_Profile_Editor
             {
                 return;
             }
+
+            //Convert SID to username
             try
             {
                 string account = new System.Security.Principal.SecurityIdentifier(userList.SelectedItem.ToString()).Translate(typeof(System.Security.Principal.NTAccount)).ToString();
@@ -76,6 +82,7 @@ namespace Windows_Profile_Editor
             detailList.Items.Clear();
             guidBox.Text = null;
             profilePathBox.Text = null;
+            GC.Collect();
 
             string a = userList.SelectedItem.ToString();
 
@@ -122,12 +129,22 @@ namespace Windows_Profile_Editor
             {
                 detailList.Items.Add(ProfileKey);
             }
-
+            DetailList.Close();
 
 
 
         }
+<<<<<<< HEAD
         */
+=======
+
+        static byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+>>>>>>> origin/master
 
         private void editDetailButton_Click(object sender, EventArgs e)
         {
@@ -146,6 +163,9 @@ namespace Windows_Profile_Editor
 
             sharedvar.closed = -1;
             input.ShowDialog();
+            input = null;
+            GC.Collect();
+
 
             if(sharedvar.closed == 0)
             {
@@ -161,7 +181,7 @@ namespace Windows_Profile_Editor
                     }
                     else if (sharedvar.vlueType == "Binary")
                     {
-                        ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details, RegistryValueKind.Binary);
+                        ChangeValue.SetValue(detailList.SelectedItem.ToString(), System.Text.Encoding.ASCII.GetBytes(sharedvar.details), RegistryValueKind.Binary);
                     }
 
                     else if (sharedvar.vlueType == "ExpandString")
@@ -192,7 +212,12 @@ namespace Windows_Profile_Editor
                     {
                         MessageBox.Show("Value not found!");
                     }
+<<<<<<< HEAD
                            
+=======
+                    ChangeValue.Close();
+                           //ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details);
+>>>>>>> origin/master
                 }
                 catch (Exception ex)
                 {
@@ -238,11 +263,11 @@ namespace Windows_Profile_Editor
                 System.Security.Principal.WindowsPrincipal principal = new System.Security.Principal.WindowsPrincipal(user);
                 isAdmin = principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
             }
-            catch (UnauthorizedAccessException ex)
+            catch (UnauthorizedAccessException)
             {
                 isAdmin = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 isAdmin = false;
             }
@@ -268,6 +293,7 @@ namespace Windows_Profile_Editor
             }
         }
 
+<<<<<<< HEAD
         private void userList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (userList.SelectedItem == null)
@@ -336,6 +362,63 @@ namespace Windows_Profile_Editor
             {
                 detailList.Items.Add(ProfileKey);
             }
+=======
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+            //This will restart the program as admin
+            var exeName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+            ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
+            startInfo.Verb = "runas";
+            System.Diagnostics.Process.Start(startInfo);
+            this.Close();
+            return;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About aboutBox = new About();
+            aboutBox.ShowDialog();
+        }
+
+        private void backupRegKey_Click(object sender, EventArgs e)
+        {
+            if(userList.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select a SID to backup.", "No SID selected!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string a = userList.SelectedItem.ToString();
+            // Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a, "ProfileImagePath", null);
+            int backupReturnCode = Exportkey(a + ".reg",(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a));
+            if(backupReturnCode != 0)
+            {
+                MessageBox.Show("There was an error backing up the registry key!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //This is the function for exporting the registry key. This requires regedit for now
+        private static int Exportkey(string exportPath, string registryPath)
+        {
+            string path = "\"" + exportPath + "\"";
+            string key = "\"" + registryPath + "\"";
+            Process proc = new Process();
+
+            try
+            {
+                proc.StartInfo.FileName = "regedit.exe";
+                proc.StartInfo.UseShellExecute = false;
+
+                proc = Process.Start("regedit.exe", "/e " + path + " " + key);
+                proc.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                proc.Dispose();
+                return -1;
+            }
+            return 0;
+>>>>>>> origin/master
         }
     }
 }

@@ -20,3 +20,16 @@ H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csproj.GenerateResource.Cache
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.CodeAnalysisLog.xml
 H:\Visual Studio 2015\Projects\Windows Profile Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.lastcodeanalysissucceeded
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.config
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.exe
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.CodeAnalysisLog.xml
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\bin\Debug\Windows Profile Editor.exe.lastcodeanalysissucceeded
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Form1.resources
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.Properties.Resources.resources
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.textInput.resources
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows Profile Editor.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\Windows-Profile-Editor\Windows Profile Editor\obj\Debug\Windows_Profile_Editor.About.resources
