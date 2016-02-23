@@ -64,6 +64,7 @@
             this.userList.Name = "userList";
             this.userList.Size = new System.Drawing.Size(265, 472);
             this.userList.TabIndex = 2;
+            this.userList.SelectedIndexChanged += new System.EventHandler(this.userList_SelectedIndexChanged);
             // 
             // label1
             // 
