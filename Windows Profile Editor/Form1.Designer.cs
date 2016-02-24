@@ -264,12 +264,12 @@
             this.Controls.Add(this.sidlabel);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-<<<<<<< HEAD
+
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-=======
+
             this.MainMenuStrip = this.menuStrip1;
->>>>>>> origin/master
+
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

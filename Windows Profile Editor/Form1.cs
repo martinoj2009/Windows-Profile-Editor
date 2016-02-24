@@ -20,7 +20,6 @@ namespace Windows_Profile_Editor
         {
             
             InitializeComponent();
-            //userList.Click += new EventHandler(userList_Click);
             detailList.DoubleClick += new EventHandler(editDetailButton_Click);
             usernameLabel.Text = null;
             warningIfNotAdmin.Text = "";
@@ -58,85 +57,6 @@ namespace Windows_Profile_Editor
 
         }
 
-        /*
-        private void userList_Click(object sender, EventArgs e)
-        {
-            if(userList.SelectedItem == null)
-            {
-                return;
-            }
-
-            //Convert SID to username
-            try
-            {
-                string account = new System.Security.Principal.SecurityIdentifier(userList.SelectedItem.ToString()).Translate(typeof(System.Security.Principal.NTAccount)).ToString();
-                usernameLabel.Text = account;
-            }
-            catch(Exception)
-            {
-                usernameLabel.Text = "Error getting username!";
-            }
-            
-
-            //Clear out the list and the text boxes
-            detailList.Items.Clear();
-            guidBox.Text = null;
-            profilePathBox.Text = null;
-            GC.Collect();
-
-            string a = userList.SelectedItem.ToString();
-
-            
-
-            //make sure a isn't null, can cause crash, this happens if user clicks in blank space of list
-            if(a == null)
-            {
-                return;
-            }
-            //string[] a = userList.Items.Cast<string>().ToArray();
-            string ProfileImagePath;
-            string GUID;
-
-            try {
-                ProfileImagePath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a, "ProfileImagePath", null);
-                profilePathBox.Text = ProfileImagePath;
-                //detailList.Items.Add(ProfileImagePath);
-            }
-             
-            catch(Exception error)
-            {
-                toolStripStatusLabel1.Text = error.Message.ToString();
-                
-                
-            }
-
-            try
-            {
-
-                GUID = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\" + a, "Guid", null);
-                guidBox.Text = GUID;
-                //detailList.Items.Add(GUID);
-            }
-            
-            catch(Exception error)
-            {
-                toolStripStatusLabel1.Text = error.Message.ToString();
-                
-            }
-
-            RegistryKey DetailList = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\\Microsoft\Windows NT\\CurrentVersion\\ProfileList\\" + userList.SelectedItem);
-            foreach (string ProfileKey in DetailList.GetValueNames())
-            {
-                detailList.Items.Add(ProfileKey);
-            }
-            DetailList.Close();
-
-
-
-        }
-<<<<<<< HEAD
-        */
-=======
 
         static byte[] GetBytes(string str)
         {
@@ -144,7 +64,7 @@ namespace Windows_Profile_Editor
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
->>>>>>> origin/master
+
 
         private void editDetailButton_Click(object sender, EventArgs e)
         {
@@ -212,12 +132,12 @@ namespace Windows_Profile_Editor
                     {
                         MessageBox.Show("Value not found!");
                     }
-<<<<<<< HEAD
+
                            
-=======
+
                     ChangeValue.Close();
                            //ChangeValue.SetValue(detailList.SelectedItem.ToString(), sharedvar.details);
->>>>>>> origin/master
+
                 }
                 catch (Exception ex)
                 {
@@ -293,7 +213,7 @@ namespace Windows_Profile_Editor
             }
         }
 
-<<<<<<< HEAD
+
         private void userList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (userList.SelectedItem == null)
@@ -362,7 +282,8 @@ namespace Windows_Profile_Editor
             {
                 detailList.Items.Add(ProfileKey);
             }
-=======
+        }
+
         private void adminButton_Click(object sender, EventArgs e)
         {
             //This will restart the program as admin
@@ -418,7 +339,7 @@ namespace Windows_Profile_Editor
                 return -1;
             }
             return 0;
->>>>>>> origin/master
+
         }
     }
 }
