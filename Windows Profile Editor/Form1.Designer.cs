@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidlabel = new System.Windows.Forms.Label();
             this.userList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@
             this.userList.Name = "userList";
             this.userList.Size = new System.Drawing.Size(265, 472);
             this.userList.TabIndex = 2;
+            this.userList.SelectedIndexChanged += new System.EventHandler(this.userList_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -262,9 +264,15 @@
             this.Controls.Add(this.sidlabel);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+<<<<<<< HEAD
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+=======
             this.MainMenuStrip = this.menuStrip1;
+>>>>>>> origin/master
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Windows Profile Editor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
